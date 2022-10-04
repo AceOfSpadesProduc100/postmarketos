@@ -9,12 +9,16 @@ arch="aarch64"
 options="!check !archcheck"
 depends="
 	linux-postmarketos-qcom-sm7150
+	make-dynpart-mappings
 	mesa-dri-gallium
 	mkbootimg
 	postmarketos-base
+	postmarketos-update-kernel
 "
 makedepends="devicepkg-dev"
-source="deviceinfo"
+source="
+	deviceinfo
+"
 
 build() {
 	devicepkg_build $startdir $pkgname
@@ -25,5 +29,5 @@ package() {
 }
 
 sha512sums="
-76e34d3232a6ee1733b7b23cad7dc685ee9818cc3ad22f93a44ac6308c6ecc68c2dbac0ae723485ad22ebf22e0617993fc6835d38167df70c8527e47d84d4386  deviceinfo
+a2d628ab788f80947de8aa3e0c47426cf97ecaab7518d4dd53a3a60fcc6a05b4705b930cd35b5aa05988113ccb42c0861b7db372bad74127664d2f4b2195bcd0  deviceinfo
 "
