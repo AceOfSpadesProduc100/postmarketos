@@ -14,6 +14,7 @@ depends="
 	mkbootimg
 	postmarketos-base
 	postmarketos-update-kernel
+    make-dynpart-mappings
 "
 makedepends="devicepkg-dev"
 source="
@@ -29,5 +30,5 @@ package() {
 }
 
 sha512sums="
-a2d628ab788f80947de8aa3e0c47426cf97ecaab7518d4dd53a3a60fcc6a05b4705b930cd35b5aa05988113ccb42c0861b7db372bad74127664d2f4b2195bcd0  deviceinfo
+985242bad66bfb8c20f1d6a88b3ab64302fcbdd02dfb395b693a6776db62589822940771820539aa4cb66c37b4888110175e1bd2d9574c169bf881bcd2a2ee83  deviceinfo
 "

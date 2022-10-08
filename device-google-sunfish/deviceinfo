@@ -18,6 +18,7 @@ deviceinfo_keyboard="false"
 deviceinfo_external_storage="false"
 deviceinfo_screen_width="1080"
 deviceinfo_screen_height="2340"
+deviceinfo_super_partitions="/dev/block/sda14"
 
 # Bootloader related
 deviceinfo_flash_method="fastboot"
