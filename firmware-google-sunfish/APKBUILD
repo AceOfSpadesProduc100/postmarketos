@@ -1,0 +1,45 @@
+pkgname=firmware-google-sunfish
+pkgver=1
+pkgrel=0
+pkgdesc="Firmware for Google Pixel 4a"
+subpackages="
+	$pkgname-remoteprocs
+	$pkgname-others
+	"
+url="https://github.com/AceOfSpadesProduc100/firmware-google-sunfish"
+arch="aarch64"
+license="proprietary"
+options="!check !strip !archcheck !tracedeps pmb:cross-native"
+_commit="9c78f05a3ab57c941515d69253b1176628b709a1"
+source="$pkgname-$_commit.tar.gz::$url/archive/$_commit/$pkgname-$_commit.tar.gz"
+builddir="$srcdir/$pkgname-$_commit"
+
+package() {
+	# parent package is empty
+	mkdir -p "$pkgdir"
+}
+
+remoteprocs() {
+	pkgdesc="Google Pixel 4a remoteproc firmwares"
+
+	# cp because of additional directories
+	mkdir -p "$subpkgdir/lib/firmware/qcom/sm7150/sunfish/"
+	cp -r "$builddir"/remoteprocs/* \
+		"$subpkgdir/lib/firmware/qcom/sm7150/sunfish/"
+	find "$subpkgdir/lib/firmware/qcom/sm7150/sunfish/" \
+		-type f -exec chmod 0644 {} \;
+}
+
+others() {
+	pkgdesc="Google Pixel 4a other firmwares"
+
+	# cp because of additional directories
+	mkdir -p "$subpkgdir/lib/firmware/"
+	cp -r "$builddir"/others/* \
+		"$subpkgdir/lib/firmware/"
+	find "$subpkgdir/lib/firmware/" \
+		-type f -exec chmod 0644 {} \;
+}
+sha512sums="
+f5c547aa43bb85c5d70bf3092dde58baa733b93ebfae7a6adfe8b757902599b6bb59adade5317704edde9fcdc24864ca6b015bab7870563b7238ca92cb73cc30  firmware-google-sunfish-9c78f05a3ab57c941515d69253b1176628b709a1.tar.gz
+"

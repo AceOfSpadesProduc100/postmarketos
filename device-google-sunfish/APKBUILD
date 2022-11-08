@@ -1,4 +1,5 @@
 # Reference: <https://postmarketos.org/devicepkg>
+# Maintainer: Connor Mitchell <c.dog29@hotmail.com>
 pkgname=device-google-sunfish
 pkgdesc="Google Pixel 4a"
 pkgver=0.1
@@ -21,6 +22,8 @@ source="
 	deviceinfo
 "
 
+subpackages="$pkgname-nonfree-firmware:nonfree_firmware"
+
 build() {
 	devicepkg_build $startdir $pkgname
 }
@@ -29,6 +32,14 @@ package() {
 	devicepkg_package $startdir $pkgname
 }
 
+nonfree_firmware() {
+	pkgdesc="Proprietary firmware blobs for the Google Pixel 4a"
+	depends="firmware-google-sunfish linux-firmware-qca linux-firmware-qcom"
+
+	# Create an empty sub-package directory because this sub-package is empty
+	mkdir "$subpkgdir"
+}
+
 sha512sums="
-431b0202af66a3f793c3a8b44de9bde6ccf163b78caa81612c9be1e293f50d1e13b913ac0b7a27ba30f755021497f5a4247fb3e49e01824cbe4972c8cfee7231  deviceinfo
+985242bad66bfb8c20f1d6a88b3ab64302fcbdd02dfb395b693a6776db62589822940771820539aa4cb66c37b4888110175e1bd2d9574c169bf881bcd2a2ee83  deviceinfo
 "
