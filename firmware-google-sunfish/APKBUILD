@@ -10,7 +10,7 @@ url="https://github.com/AceOfSpadesProduc100/firmware-google-sunfish"
 arch="aarch64"
 license="proprietary"
 options="!check !strip !archcheck !tracedeps pmb:cross-native"
-_commit="9c78f05a3ab57c941515d69253b1176628b709a1"
+_commit="83da3d88c0762c401320ed47e33d11ddd7f20027"
 source="$pkgname-$_commit.tar.gz::$url/archive/$_commit/$pkgname-$_commit.tar.gz"
 builddir="$srcdir/$pkgname-$_commit"
 
@@ -41,5 +41,5 @@ others() {
 		-type f -exec chmod 0644 {} \;
 }
 sha512sums="
-f5c547aa43bb85c5d70bf3092dde58baa733b93ebfae7a6adfe8b757902599b6bb59adade5317704edde9fcdc24864ca6b015bab7870563b7238ca92cb73cc30  firmware-google-sunfish-9c78f05a3ab57c941515d69253b1176628b709a1.tar.gz
+a57987d656dfa246e7800b07504c2f588445b090d754db5ec7cec7c7940d8d5902f50d573438912b5b87cd90231723e9ca230be72b3299737d5e4689ce2e4493  firmware-google-sunfish-83da3d88c0762c401320ed47e33d11ddd7f20027.tar.gz
 "
