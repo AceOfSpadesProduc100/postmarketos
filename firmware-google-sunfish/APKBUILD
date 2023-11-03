@@ -6,14 +6,12 @@ subpackages="
 	$pkgname-remoteprocs
 	$pkgname-others
 	"
-url="https://github.com/AceOfSpadesProduc100/firmware-google-sunfish"
+url="https://github.com/smaybius/firmware-google-sunfish"
 arch="aarch64"
 license="proprietary"
 options="!check !strip !archcheck !tracedeps pmb:cross-native"
-_commit="83da3d88c0762c401320ed47e33d11ddd7f20027"
-source="$pkgname-$_commit.tar.gz::$url/archive/$_commit/$pkgname-$_commit.tar.gz"
-builddir="$srcdir/$pkgname-$_commit"
-
+source="$pkgname.zip::$url/archive/refs/heads/main.zip"
+builddir="$srcdir/$pkgname-main"
 package() {
 	# parent package is empty
 	mkdir -p "$pkgdir"
@@ -41,5 +39,5 @@ others() {
 		-type f -exec chmod 0644 {} \;
 }
 sha512sums="
-a57987d656dfa246e7800b07504c2f588445b090d754db5ec7cec7c7940d8d5902f50d573438912b5b87cd90231723e9ca230be72b3299737d5e4689ce2e4493  firmware-google-sunfish-83da3d88c0762c401320ed47e33d11ddd7f20027.tar.gz
+17300654f2d4aa09a0b1d19295ec2019c82f2678aef76cd0122b3a45ae6be254727a09294038caeb5140ba0bf6ed481a4a994509dbf521b53e8e8bac8cc18977  firmware-google-sunfish.zip
 "

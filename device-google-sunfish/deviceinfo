@@ -8,7 +8,6 @@ deviceinfo_manufacturer="Google"
 deviceinfo_codename="google-sunfish"
 deviceinfo_year="2020"
 deviceinfo_dtb="qcom/sm7150-google-sunfish"
-deviceinfo_append_dtb="true"
 deviceinfo_arch="aarch64"
 
 # Device related
